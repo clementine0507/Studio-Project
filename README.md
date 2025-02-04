@@ -37,20 +37,18 @@ Some ideas I want to try:
 Based on what I learned in Workshop 2 about the `mousePressed()` system function in `p5.js` and the `for` loop from Workshop 1, I want to start by writing a basic interactive code.
 - Follow the user's mousePressed to generate random lines.
 
-’’’
-javascript
-  
+```javascript
 function setup() {
-
-  createCanvas(800, 800);
-  
-  background(255); // white background
-  
+  createCanvas(400, 400);
+  background(255);
 }
 
-
-function draw() {
-
+function mousePressed() {
+  let x1 = random(width);
+  let y1 = random(height);
+  let x2 = random(width);
+  let y2 = random(height);
+  
+  stroke(0);
+  line(x1, y1, x2, y2);
 }
-
-’’’
