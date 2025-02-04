@@ -37,7 +37,8 @@ Some ideas I want to try:
 Based on what I learned in Workshop 2 about the `mousePressed()` system function in `p5.js` and the `for` loop from Workshop 1, I want to start by writing a basic interactive code.
 - Follow the user's mousePressed to generate random lines.
 
-  ’’’Javascript
+  ’’’
+  Javascript
   
 function setup() {
 
