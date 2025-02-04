@@ -38,6 +38,7 @@ Based on what I learned in Workshop 2 about the `mousePressed()` system function
 - Follow the user's mousePressed to generate random lines.
 
   ’’’
+  
   Javascript
   
 function setup() {
