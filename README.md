@@ -38,11 +38,18 @@ Based on what I learned in Workshop 2 about the `mousePressed()` system function
 - Follow the user's mousePressed to generate random lines.
 
   ’’’Javascript
+  
 function setup() {
+
   createCanvas(800, 800);
+  
   background(255); // white background
+  
 }
 
+
 function draw() {
+
 }
+
 ’’’
