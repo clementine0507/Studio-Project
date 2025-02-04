@@ -45,10 +45,11 @@ function setup() {
 
 function draw() {
 }
+```
 
 `draw()` continuously refreshes the screen. However, I only want to generate new random lines when the mouse is clicked. Therefore, I kept `draw()` empty and chose to draw the lines inside `mousePressed()`.
 
-’’’Javascript
+```Javascript
 function mousePressed() {
   let lineCount = int(random(1, 6));
 
@@ -62,12 +63,13 @@ function mousePressed() {
     line(x1, y1, x2, y2);
   }
 }
+```
 
 ### Line’s Game 1.0
 
-’’’Javascript
+```Javascript
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(800, 800);
   background(255); // white background
 }
 
@@ -87,4 +89,8 @@ function mousePressed() {
     line(x1, y1, x2, y2);
   }
 }
+```
 
+![image](https://github.com/user-attachments/assets/d95ecf3c-f72e-463a-9019-fb5f91e8f6aa)
+
+When I press the screen, I get a random number of lines (1-5).
