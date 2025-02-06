@@ -1,4 +1,4 @@
-# Studio-Project
+![image](https://github.com/user-attachments/assets/99580866-bf80-4291-8b00-c3a4ac068332)# Studio-Project
 
 - I found that I am most interested in interactivity after considering six themes. When the viewer can participate in a work, the distance between the work and the viewer is reduced, and the viewer becomes more than just an external observer—they become a part of the work. Personally, I also have a strong preference for this type of artwork. I believe that this approach allows the audience to more easily understand the essence of the work and analyze the emotions the artist intends to express from different perspectives.
   
@@ -119,3 +119,68 @@ Add a `for` loop to reload `x2` and `y2` ten times.
 Every time I click the screen, I get some randomly generated lines radiating at different angles. This is somewhat similar to the effect I want, but I hope to achieve a shape where all the points are connected together(like stars).
 
 #### Week1-Line's Game 3.0 and Line's Game 4.0
+
+After completing the summary of Amy Goodchild's work, I also tried to convey my requirements to ChatGPT, as I couldn’t find any instructions in the p5.js reference that met my conditions. 
+
+However, the process was quite difficult at times, as ChatGPT couldn’t understand what I meant. But once it understood, it directly generated a piece of code for me:
+
+![image](https://github.com/user-attachments/assets/4233bb57-6f32-43cd-829d-26e6b620b7fd)
+
+```Javascript
+let points = []; // Stores the main points to connect lines
+let lines = [];  // Stores the lines to be drawn
+
+function setup() {
+  createCanvas(400, 400);
+  background(255);
+}
+
+function mousePressed() {
+  let newPoint = createVector(mouseX, mouseY);
+  points.push(newPoint); // Store new clicked point
+
+  // Generate lines connecting the new point to previous points
+  for (let p of points) {
+    if (p !== newPoint) { 
+      lines.push({ start: newPoint, end: p });
+    }
+  }
+  
+  redraw(); // Refresh canvas to draw new lines
+}
+
+function draw() {
+  background(255);
+  stroke(0);
+  
+  // Draw stored lines
+  for (let l of lines) {
+    line(l.start.x, l.start.y, l.end.x, l.end.y);
+  }
+}
+```
+
+After trying this code, it works and does what I want it to do. It generates a point where my mouse is and connects it to other points.
+
+![image](https://github.com/user-attachments/assets/d8595cf8-345c-4f23-9107-135f334146e7)
+
+About the explanation given by chatgpt:
+
+![image](https://github.com/user-attachments/assets/685f461a-e2b6-427f-b224-719f07a9b738)
+![image](https://github.com/user-attachments/assets/fe26fa6a-87b4-4448-805a-06b1c17a83ca)
+![image](https://github.com/user-attachments/assets/5260b67f-948d-41fd-ade2-61db1d562bf1)
+![image](https://github.com/user-attachments/assets/48a1f015-72db-46f1-b7e1-a2cc48bd9a2b)
+
+Based on ChatGPT's explanation, I understand that the code records the position of each click using a points array and stores the start and end points of each line in a lines array. Each time a click occurs, the program generates a new point and connects it to the previous point, forming a new line segment. The `redraw()` function calls the `draw()` function, clears the canvas, and redraws all the lines to ensure the screen is updated. This way, each click adds a new connection.
+
+However, in this code, I actually don't understand what the `createVector` function and the exclamation mark in `if (p !== newPoint) {` mean.
+
+![image](https://github.com/user-attachments/assets/34c47145-3a8e-41fe-8a25-40f356c78e6b)
+
+According to ChatGPT's explanation, `!==` means "not equal to," and in this case, it's used because the condition I set is to prevent the newly clicked point from connecting to itself. The points will only be connected if `p` is a previously clicked point.
+
+About the explanation of `createVector()`, I found it in the [reference](https://p5js.org/zh-Hans/reference/p5/createVector/):
+
+![image](https://github.com/user-attachments/assets/fb6f5f12-3d7c-444c-a016-5c69049dfe37)
+
+From the reference, it can be understood that the line of code `let newPoint = createVector(mouseX, mouseY);` tells the program that the `newPoint` is located at x-coordinate 100 and y-coordinate 200 on the canvas.
