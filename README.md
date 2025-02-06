@@ -119,6 +119,7 @@ Add a `for` loop to reload `x2` and `y2` ten times.
 Every time I click the screen, I get some randomly generated lines radiating at different angles. This is somewhat similar to the effect I want, but I hope to achieve a shape where all the points are connected together(like stars).
 
 #### Week1-Line's Game 3.0 and Line's Game 4.0
+URL from p5.js: [Line's game 3.0](https://editor.p5js.org/wtan387/full/7bLAQtro8)
 
 After completing the summary of Amy Goodchild's work, I also tried to convey my requirements to ChatGPT, as I couldn’t find any instructions in the p5.js reference that met my conditions. 
 
