@@ -8,7 +8,7 @@
 
   In Workshop 0, we learned how to capture user mouse interactions. I believe these features offer great possibilities for engaging interactivity.
 
-## Week1
+## Week1-Line’s Game 1.0
 Inspired by Sol LeWitt's *ChatGPT* series, I developed an interest in the combination of black and white. The arrangement of lines gives me a sense of order that, in reality, does not strictly follow a fixed pattern. To explore this visual effect, I looked up the `line()` function in the `p5.js` reference and conducted some experiments.
 
 ![image](https://github.com/user-attachments/assets/cdcca91f-5dd1-4ee1-83a3-953da22f572a)
@@ -74,34 +74,8 @@ function mousePressed() {
 }
 ```
 
-### Line’s Game 1.0
-
-URL: https://clementine0507.github.io/Studio-Project/
-
-```Javascript
-function setup() {
-  createCanvas(800, 800);
-  background(255); // white background
-}
-
-function draw() {
-}
-
-function mousePressed() {
-  let lineCount = int(random(1, 6)); // Randomly generate 1~5 lines
-
-  for (let i = 0; i < lineCount; i++) {
-    let x1 = random(width);
-    let y1 = random(height);
-    let x2 = random(width);
-    let y2 = random(height);
-    
-    stroke(0); // black lines
-    line(x1, y1, x2, y2);
-  }
-}
-```
-
 ![image](https://github.com/user-attachments/assets/d95ecf3c-f72e-463a-9019-fb5f91e8f6aa)
 
 When I press the screen, I get a random number of lines (1-5).
+
+### Week1-Line’s Game 2.0
