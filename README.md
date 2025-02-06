@@ -12,7 +12,7 @@
 
 I started by uploading each version of the code to the p5.js web editor and generating a URL for easy access. However, my final work will be published using the GitHub-generated URL.
 
-URL from p5.js: https://editor.p5js.org/wtan387/full/yineqLirn
+URL from p5.js: [Line's game 1.0](https://editor.p5js.org/wtan387/full/yineqLirn)
 
 Inspired by Sol LeWitt's *ChatGPT* series, I developed an interest in the combination of black and white. The arrangement of lines gives me a sense of order that, in reality, does not strictly follow a fixed pattern. To explore this visual effect, I looked up the `line()` function in the `p5.js` reference and conducted some experiments.
 
