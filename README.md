@@ -84,3 +84,36 @@ function mousePressed() {
 When I press the screen, I get a random number of lines (1-5).
 
 ### Week1-Line’s Game 2.0
+
+URL from p5.js: [Line's game 2.0](https://editor.p5js.org/wtan387/full/bJvAAgsKT)
+
+My second idea:
+
+Emit lines from several random points and make them converge at other points (animation).  
+
+Among the four parameters of `line()`, we know that the first two control the starting point, while the last two determine the length and endpoint position. So, I just need to keep the first two parameters consistent and use a `for` loop to increase the number of lines (while still setting the last two parameters to random values).
+
+```Javascript
+function mousePressed() {
+  background(255); 
+  let x1 = random(width);
+  let y1 = random(height);
+```
+
+Each time the user clicks the mouse, the background turns white (clearing the existing lines) and then a random point is generated.
+
+```Javascript
+  for (let i = 0; i < 10; i++) { 
+    let x2 = random(width);
+    let y2 = random(height);
+   
+    stroke(0);
+    line(x1, y1, x2, y2);
+```
+
+Add a `for` loop to reload `x2` and `y2` ten times.
+
+![image](https://github.com/user-attachments/assets/1c85719b-11a1-4137-8357-e541bb9916c7)
+![image](https://github.com/user-attachments/assets/cd38004b-a08c-4ac9-b796-97c2ef5f2a0d)
+
+Every time I click the screen, I get some randomly generated lines radiating at different angles. This is somewhat similar to the effect I want, but I hope to achieve a shape where all the points are connected together(like stars).
