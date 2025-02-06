@@ -117,3 +117,5 @@ Add a `for` loop to reload `x2` and `y2` ten times.
 ![image](https://github.com/user-attachments/assets/cd38004b-a08c-4ac9-b796-97c2ef5f2a0d)
 
 Every time I click the screen, I get some randomly generated lines radiating at different angles. This is somewhat similar to the effect I want, but I hope to achieve a shape where all the points are connected together(like stars).
+
+#### Week1-Line's Game 3.0 and Line's Game 4.0
