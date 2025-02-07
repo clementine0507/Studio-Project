@@ -1,6 +1,7 @@
 # Studio-Project
-My topic is `interactivity`.
+My topic is the `interactivity`.
 
+My work's URL: https://clementine0507.github.io/Studio-Project/
 ## Week1-Line’s Game 1.0
 
 I started by uploading each version of the code to the p5.js web editor and generating a URL for easy access. However, my final work will be published using the GitHub-generated URL.
