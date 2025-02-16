@@ -198,3 +198,95 @@ Some inspirations about sound:
 ![fdeadfd8eab6adae818990d882256de](https://github.com/user-attachments/assets/b9e50bd9-e837-4a31-abc9-de740e021d25)
 ![275332ebcde0527e701ffba16f05998](https://github.com/user-attachments/assets/972f2748-6feb-4d4d-b3a2-714666ea65fa)
 
+根据chatgpt给我整理的思路，我开始一遍一遍尝试代码，以下是成功版的代码以及思路：
+在绘制游戏开始之前，我希望有一个带有引导性的文字方便用户理解，再点击之后才会开始捕捉声音。
+```Javascript
+  text('Sound is your paintbrush.', width / 2, height / 2); 
+
+  mic = new p5.AudioIn(); 
+  userStartAudio().then(() => {
+    mic.start();  // turn on the microphone
+  })
+```
+- Games are typically fullscreen, so I adopted a fullscreen approach, making the canvas match the window size. Then, I created a microphone input object to access the user's microphone permissions and capture audio signals.
+
+- When the user clicks anywhere on the canvas, the drawing process begins, and the text on the screen is cleared.
+
+In the initial implementation, I encountered many issues, particularly with capturing audio. For example, the sound was too quiet to trigger the drawing of the lines, or the lines moved too slowly. But as I continued to explore, I began to think about what kind of effect I actually wanted for the lines. I wanted the lines to move freely, as if they were dancing to the rhythm of the sound.
+
+At the same time, I realized that emotions played an important role in the creation process. Therefore, I decided to link the volume of the sound to the thickness of the lines. The intensity of the sound determines the thickness of the lines 'strokeWeight(map(soundLevel, 0, 1, 2, 15)', while the sound emitted by the user controls the speed of the line drawing. This is not limited to speaking or singing; any human-generated noise can also influence the appearance of the lines.
+```Javascript
+function updateLinePosition() {
+  let angle = random(TWO_PI); 
+  let speed = map(soundLevel, 0, 1, 10, 50); 
+```
+
+```Javascript
+let mic;
+let isGameStarted = false;
+let soundLevel = 0;
+let linePosition; 
+let previousPosition; 
+
+function setup() {
+  createCanvas(windowWidth, windowHeight); 
+  background(255);
+  textSize(32);
+  textAlign(CENTER, CENTER);
+  fill(0);
+
+  text('Sound is your paintbrush.', width / 2, height / 2);
+
+  mic = new p5.AudioIn();
+  
+  userStartAudio().then(() => {
+    mic.start();
+  })
+
+  linePosition = createVector(width / 2, height / 2); 
+  previousPosition = linePosition.copy(); 
+}
+
+function draw() {
+  if (isGameStarted) {
+    soundLevel = mic.getLevel();
+
+    if (soundLevel > 0.01) {
+      updateLinePosition();
+      drawLine();
+    }
+  }
+}
+
+function mousePressed() {
+  if (!isGameStarted) {
+    isGameStarted = true;
+    background(255);
+  }
+}
+
+function updateLinePosition() {
+  let angle = random(TWO_PI);  
+  let speed = map(soundLevel, 0, 1, 10, 50);  
+
+  linePosition.x += cos(angle) * speed;
+  linePosition.y += sin(angle) * speed;
+
+  linePosition.x = constrain(linePosition.x, 0, width);
+  linePosition.y = constrain(linePosition.y, 0, height);
+}
+
+function drawLine() {
+  let r = random(0, 0); 
+  let g = random(150, 255); 
+  let b = random(150, 255); 
+  stroke(r, g, b); 
+  strokeWeight(map(soundLevel, 0, 1, 2, 15)); 
+  
+  line(previousPosition.x, previousPosition.y, linePosition.x, linePosition.y);
+
+  previousPosition.x = linePosition.x;
+  previousPosition.y = linePosition.y;
+}
+```
+![image](https://github.com/user-attachments/assets/fd340085-fec5-4edb-bcb2-eb015c382b0e)
