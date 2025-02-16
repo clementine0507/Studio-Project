@@ -179,3 +179,17 @@ About the explanation of `createVector()`, I found it in the [reference](https:/
 ![image](https://github.com/user-attachments/assets/fb6f5f12-3d7c-444c-a016-5c69049dfe37)
 
 From the reference, it can be understood that the line of code `let newPoint = createVector(mouseX, mouseY);` tells the program that the `newPoint` is located at x-coordinate 100 and y-coordinate 200 on the canvas.
+
+#### Week2-New idea and work
+After receiving feedback, I realized that the interactivity in my current code is still somewhat limited. Reflecting on Sol LeWitt’s work, particularly his Wall Drawing #260, I was inspired by the way LeWitt allowed other artists to create based on his instructions, resulting in an artwork that is highly interactive. Building on this idea, I want to incorporate lines as the foundation of my code and invite users to engage in the creation process. However, unlike LeWitt, I want users to interact with the artwork not through their hands but through a unique medium.
+
+In my previous assignment, during Workshop 9, I learned how to access the user’s camera to create interactive content. Given that p5.js can also access the user’s microphone, it led me to wonder—can sound levels control the shape of a line, turning it into a dynamic drawing tool? I’ve played games before where sound controls gameplay elements, which inspired me to experiment with using the volume of the user’s voice to manipulate the lines and shapes on the canvas. This is the direction I plan to explore.
+
+Some inspirations about sound:
+
+- We may casually mention an item, and next thing we know, our phones are listening and pushing related content to us. At first glance, this might seem like a helpful feature, making our lives more convenient. But beneath the surface, it often stirs up a sense of discomfort. We rely on our phones so much that it’s hard to imagine life without them, but this constant connection also means they’re always gathering our data, especially when we’re talking to others. If we mention something personal, is it being recorded? Are our words and details being collected and analyzed without us even realizing it? This raises a serious question: how much control do we really have over our privacy? The idea of being silently listened to can make us feel uneasy.
+
+- In light of this, I want to challenge this feeling of unease by using sound itself to create art. I don't want sound to be a tool for surveillance; instead, I want to turn it into a creative force. Unlike the passive data collection by our phones, creating with code requires the user's active consent. In this process, sound becomes a voluntary medium, not just something that’s collected. I aim to reverse this technological trend and offer sound more respect, both as a medium and on an emotional level.
+
+- To me, sound is a powerful, almost magical force—it transcends distance and connects us. Whether it’s a song or a simple conversation, sound lets us exchange information, emotions, and ideas. Through language, we communicate, and through tone, we convey our feelings. Ultimately, sound forms the connection between us and the world, and between us and each other. In my work, I want to use my voice to let sound become the source of creation. The code will capture the traces left by my voice, not just as a formal representation of sound, but as the marks of its presence and influence in space. Each line drawn by sound will be a reminder of its “visit,” with a unique character and life of its own.
+
