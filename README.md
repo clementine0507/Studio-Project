@@ -182,6 +182,7 @@ From the reference, it can be understood that the line of code `let newPoint = c
 
 #### Week2-New idea and work
 After receiving feedback, I realized that the interactivity in my current code is still somewhat limited. Reflecting on Sol LeWitt’s work, particularly his Wall Drawing #260, I was inspired by the way LeWitt allowed other artists to create based on his instructions, resulting in an artwork that is highly interactive. Building on this idea, I want to incorporate lines as the foundation of my code and invite users to engage in the creation process. However, unlike LeWitt, I want users to interact with the artwork not through their hands but through a unique medium.
+![image](https://github.com/user-attachments/assets/29176b9b-4e12-49ac-b0c1-f019d3ae261f)
 
 In my previous assignment, during Workshop 9, I learned how to access the user’s camera to create interactive content. Given that p5.js can also access the user’s microphone, it led me to wonder—can sound levels control the shape of a line, turning it into a dynamic drawing tool? I’ve played games before where sound controls gameplay elements, which inspired me to experiment with using the volume of the user’s voice to manipulate the lines and shapes on the canvas. This is the direction I plan to explore.
 
