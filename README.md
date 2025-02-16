@@ -214,12 +214,14 @@ Some inspirations about sound:
 
 In the initial implementation, I encountered many issues, particularly with capturing audio. For example, the sound was too quiet to trigger the drawing of the lines, or the lines moved too slowly. But as I continued to explore, I began to think about what kind of effect I actually wanted for the lines. I wanted the lines to move freely, as if they were dancing to the rhythm of the sound.
 
-At the same time, I realized that emotions played an important role in the creation process. Therefore, I decided to link the volume of the sound to the thickness of the lines. The intensity of the sound determines the thickness of the lines 'strokeWeight(map(soundLevel, 0, 1, 2, 15)', while the sound emitted by the user controls the speed of the line drawing. This is not limited to speaking or singing; any human-generated noise can also influence the appearance of the lines.
+At the same time, I realized that emotions played an important role in the creation process. Therefore, I decided to link the volume of the sound to the thickness of the lines. The intensity of the sound determines the thickness of the lines `strokeWeight(map(soundLevel, 0, 1, 2, 15)`, while the sound emitted by the user controls the speed of the line drawing. This is not limited to speaking or singing; any human-generated noise can also influence the appearance of the lines.
 ```Javascript
 function updateLinePosition() {
   let angle = random(TWO_PI); 
   let speed = map(soundLevel, 0, 1, 10, 50); 
 ```
+The complete code:
+URL from [p5.js](https://editor.p5js.org/wtan387/full/AMWCapz7M)
 
 ```Javascript
 let mic;
@@ -289,4 +291,5 @@ function drawLine() {
   previousPosition.y = linePosition.y;
 }
 ```
+What the code looks like when it starts running：
 ![image](https://github.com/user-attachments/assets/fd340085-fec5-4edb-bcb2-eb015c382b0e)
